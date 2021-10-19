@@ -1,0 +1,31 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input required type="text" name="name" [(ngModel)]="user.name" placeholder="Nombre" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="email" [(ngModel)]="user.email" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="url" name="password" [(ngModel)]="user.password" placeholder="Password" class="form-control">
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <button class="btn btn-success" (click)="update ? updateUser() : createUser()">
+                        {{ update ? 'Actualizar' : 'Guardar'}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<div class="col-md-4 offset-md-2">
+    <div class="card card-body text-center">
+        <h3>{{ user.name == '' ? 'Nombre' : user.name}}</h3>
+        <p>{{ user.email == '' ? 'Email' : user.email}}</p>
+        <p>{{ user.password == '' ? 'Contraseña' : user.password}}</p>
+    </div>
+</div>
